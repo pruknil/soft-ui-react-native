@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import {Platform, StatusBar} from 'react-native';
 import {useFonts} from 'expo-font';
-import AppLoading from 'expo-app-loading';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 
 import Menu from './Menu';
 import {useData, ThemeProvider, TranslationProvider} from '../hooks';
+import * as SplashScreen from 'expo-splash-screen';
 
 export default () => {
   const {isDark, theme, setTheme} = useData();
@@ -28,10 +28,16 @@ export default () => {
     'OpenSans-Bold': theme.assets.OpenSansBold,
   });
 
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
 
+  if (!fontsLoaded) {
+    return null;
+  }
   const navigationTheme = {
     ...DefaultTheme,
     dark: isDark,
