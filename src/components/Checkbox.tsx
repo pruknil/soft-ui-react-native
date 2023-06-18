@@ -10,7 +10,7 @@ import {ICheckboxProps} from '../constants/types';
 
 const Checkbox = ({
   onPress,
-  haptic = true,
+  haptic = false,
   id = 'Checkbox',
   ...props
 }: ICheckboxProps) => {

@@ -64,7 +64,7 @@ const Button = ({
   left,
   top,
   bottom,
-  haptic = true,
+  haptic = false,
   vibrate,
   vibrateRepeat,
   onPress,
