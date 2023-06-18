@@ -104,6 +104,10 @@
     "following": "Following",
     "aboutMe": "About me"
   },
+  "settings": {
+    "language": "Language",
+    "save": "Save"
+  },
   "pro": {
     "title": "Soft UI PRO",
     "alert": "This feature is available in PRO version",
