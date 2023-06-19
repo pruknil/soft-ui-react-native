@@ -42,7 +42,7 @@ export default () => {
       <Stack.Screen
         name="Settings"
         component={Settings}
-        options={{headerShown: false}}
+        options={{...screenOptions.back, title: t('navigation.settings')}}
       />
 
       <Stack.Screen

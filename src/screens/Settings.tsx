@@ -1,5 +1,5 @@
-import React, {useLayoutEffect, useState} from 'react';
-import {FlatList} from 'react-native';
+import React, {useEffect, useLayoutEffect, useState} from 'react';
+import {FlatList, Platform, StatusBar} from 'react-native';
 
 import {useNavigation} from '@react-navigation/core';
 import {useHeaderHeight} from '@react-navigation/stack';
@@ -7,15 +7,25 @@ import {useHeaderHeight} from '@react-navigation/stack';
 import {useTheme, useData, useTranslation} from '../hooks/';
 import {Block, Button, Switch, Image, Modal, Text} from '../components/';
 
-// buttons example
-const Buttons = () => {
+const SettingForm = () => {
+  const listLang = [
+    {id: 'en', name: 'English'},
+    {id: 'th', name: 'ไทย'},
+  ];
   const {isDark, handleIsDark} = useData();
   const {t} = useTranslation();
   const {assets, colors, sizes, gradients} = useTheme();
-  const navigation = useNavigation();
+  //const navigation = useNavigation();
   const [showLanguageModal, setLanguageModal] = useState(false);
-  const [language, setLanguage] = useState('en');
-  const {setLocale} = useTranslation();
+  const [language, setLanguage] = useState(listLang[0]);
+  const {locale, setLocale} = useTranslation();
+  useEffect(() => {
+    listLang.map((item) => {
+      if (locale === item.id) {
+        setLanguage(item);
+      }
+    });
+  }, []);
   return (
     <Block paddingHorizontal={sizes.padding}>
       <Text p semibold marginBottom={sizes.s}>
@@ -32,8 +42,8 @@ const Buttons = () => {
             align="center"
             justify="space-between"
             paddingHorizontal={sizes.sm}>
-            <Text bold center transform="uppercase" marginRight={sizes.sm}>
-              {language}
+            <Text bold center marginRight={sizes.sm}>
+              {language.name}
             </Text>
             <Image
               source={assets.arrow}
@@ -46,8 +56,9 @@ const Buttons = () => {
           visible={showLanguageModal}
           onRequestClose={() => setLanguageModal(false)}>
           <FlatList
-            keyExtractor={(index) => `${index}`}
-            data={['en', 'th']}
+            keyExtractor={(item) => item.id}
+            // data={['en', 'th']}
+            data={listLang}
             renderItem={({item}) => (
               <Button
                 marginBottom={sizes.sm}
@@ -55,8 +66,8 @@ const Buttons = () => {
                   setLanguage(item);
                   setLanguageModal(false);
                 }}>
-                <Text p white semibold transform="uppercase">
-                  {item}
+                <Text p white semibold>
+                  {item.name}
                 </Text>
               </Button>
             )}
@@ -77,8 +88,8 @@ const Buttons = () => {
       <Button
         gradient={gradients.primary}
         onPress={() => {
-          setLocale(language);
-          navigation.navigate('Home');
+          setLocale(language.id);
+          //navigation.navigate('Home');
         }}>
         <Text color={colors.white}>{t('settings.save')}</Text>
       </Button>
@@ -112,7 +123,7 @@ const Settings = () => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{paddingVertical: sizes.padding}}>
         <Block>
-          <Buttons />
+          <SettingForm />
         </Block>
       </Block>
     </Block>
