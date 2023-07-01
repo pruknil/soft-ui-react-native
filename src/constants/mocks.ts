@@ -309,7 +309,8 @@ export const ARTICLES: IArticle[] = [
   {
     id: 5,
     title: 'Office space means growth.',
-    description: `The mission of LinkedIn is simple: connect the world's professionals.`,
+    description:
+      "The mission of LinkedIn is simple: connect the world's professionals.",
     category: CATEGORIES[1],
     options: ARTICLE_OPTIONS,
     image:

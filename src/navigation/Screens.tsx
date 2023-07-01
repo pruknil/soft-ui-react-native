@@ -3,7 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import {Articles, Components, Home, Profile, Register, Pro} from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
-import Settings from "../screens/Settings";
+import Settings from '../screens/Settings';
 
 const Stack = createStackNavigator();
 
