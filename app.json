@@ -36,6 +36,14 @@
         "projectId": "0874358b-6211-445f-a0a1-1f91ddedc9b7"
       }
     },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera."
+        }
+      ]
+    ],
     "runtimeVersion": {
       "policy": "sdkVersion"
     },
