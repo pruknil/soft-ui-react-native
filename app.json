@@ -20,13 +20,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pruknil.rnsoftuikitfree"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#CB0C9F"
-      }
+      },
+      "package": "com.pruknil.rnsoftuikitfree"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -37,18 +39,10 @@
       }
     },
     "plugins": [
-      [
-        "expo-camera",
-        {
-          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera."
-        }
-      ]
+      "expo-localization"
     ],
     "runtimeVersion": {
       "policy": "sdkVersion"
-    },
-    "plugins": [
-      "expo-localization"
-    ]
+    }
   }
 }
