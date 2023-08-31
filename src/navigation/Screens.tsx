@@ -30,7 +30,7 @@ export default () => {
       <Stack.Screen
         name="MyCamera"
         component={MyCamera}
-        options={{title: t('navigation.camera'), headerShown: false}}
+        options={screenOptions.camera}
       />
 
       <Stack.Screen

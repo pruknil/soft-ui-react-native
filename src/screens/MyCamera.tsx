@@ -1,5 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React, {useContext, useEffect, useRef, useState} from 'react';
+import React, {
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 import {
   Dimensions,
   Platform,
@@ -7,11 +13,13 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import {Block} from '../components/';
+import {Block, Image} from '../components/';
 import {Camera, CameraType} from 'expo-camera';
-import * as FaceDetector from 'expo-face-detector';
 import * as MediaLibrary from 'expo-media-library';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
+import {useTheme} from '../hooks';
+import {useNavigation} from '@react-navigation/core';
+import {useHeaderHeight} from '@react-navigation/stack';
 const {width: windowWidth} = Dimensions.get('window');
 
 const PREVIEW_SIZE = 325;
@@ -23,6 +31,24 @@ const PREVIEW_RECT = {
 };
 
 const MyCamera = () => {
+  const {assets, sizes} = useTheme();
+  const navigation = useNavigation();
+  const headerHeight = useHeaderHeight();
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerBackground: () => (
+        <Image
+          radius={0}
+          resizeMode="cover"
+          width={sizes.width}
+          height={headerHeight}
+          source={assets.header}
+        />
+      ),
+    });
+  }, [assets.header, navigation, sizes.width, headerHeight]);
+
   const [type, setType] = useState(CameraType.front);
   const [permission, requestPermission] = Camera.useCameraPermissions();
   const [status, requestPermissionMedia] = MediaLibrary.usePermissions();
@@ -93,15 +119,7 @@ const MyCamera = () => {
         useCamera2Api={Platform.OS === 'ios'}
         ratio={'16:9'}
         ref={cameraRef}
-        onFacesDetected={handleFacesDetected}
-        flashMode={flashMode}
-        faceDetectorSettings={{
-          mode: FaceDetector.FaceDetectorMode.fast,
-          detectLandmarks: FaceDetector.FaceDetectorLandmarks.none,
-          runClassifications: FaceDetector.FaceDetectorClassifications.none,
-          minDetectionInterval: 100,
-          tracking: true,
-        }}>
+        flashMode={flashMode}>
         <View
           style={{
             position: 'absolute',
@@ -166,9 +184,7 @@ const MyCamera = () => {
     </Block>
   );
 };
-const handleFacesDetected = ({faces}) => {
-  //console.log(faces)
-};
+
 const styles = StyleSheet.create({
   master: {
     flex: 1,

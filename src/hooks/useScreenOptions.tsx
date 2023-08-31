@@ -87,6 +87,21 @@ export default () => {
 
   const options = {
     stack: menu,
+    camera: {
+      ...menu,
+      headerTitle: () => (
+        <Text p white>
+          {t('navigation.camera')}
+        </Text>
+      ),
+      headerRight: () => null,
+      headerLeft: () => (
+        <Button
+          onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
+          <Image source={icons.menu} radius={0} color={colors.white} />
+        </Button>
+      ),
+    },
     components: {
       ...menu,
       headerTitle: () => (
