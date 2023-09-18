@@ -1,6 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, {
-  useContext,
   useEffect,
   useLayoutEffect,
   useRef,
@@ -15,6 +13,7 @@ import {
 } from 'react-native';
 import {Block, Image} from '../components/';
 import {Camera, CameraType} from 'expo-camera';
+import * as FaceDetector from 'expo-face-detector';
 import * as MediaLibrary from 'expo-media-library';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import {useTheme} from '../hooks';
@@ -50,29 +49,34 @@ const MyCamera = () => {
   }, [assets.header, navigation, sizes.width, headerHeight]);
 
   const [type, setType] = useState(CameraType.front);
-  const [permission, requestPermission] = Camera.useCameraPermissions();
-  const [status, requestPermissionMedia] = MediaLibrary.usePermissions();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [cameraPermission, requestCameraPermission] =
+    Camera.useCameraPermissions();
+  const [mediaPermission, requestMediaPermission] =
+    MediaLibrary.usePermissions();
   const [flashMode, setFlashMode] = React.useState('off');
   const cameraRef = useRef(null);
   useEffect(() => {
-    requestPermission();
-    requestPermissionMedia();
+    requestCameraPermission();
+    requestMediaPermission();
   }, []);
-  if (requestPermission === null) {
+  if (requestCameraPermission === null) {
     // eslint-disable-next-line react/jsx-no-undef
     return <Block>No access to camera</Block>;
   }
 
-  if (requestPermission === false) {
+  // @ts-ignore
+  if (requestCameraPermission === false) {
     return <Block>No access to camera</Block>;
   }
 
-  if (status === null) {
-    requestPermissionMedia().then((r) => {
+  if (mediaPermission === null) {
+    requestMediaPermission().then((r) => {
       return <Block>No access to Media</Block>;
     });
   }
-  if (status === false) {
+  // @ts-ignore
+  if (mediaPermission === false) {
     return <Block>No access to Media</Block>;
   }
 
@@ -111,6 +115,10 @@ const MyCamera = () => {
     }
   };
 
+  function handleFacesDetected(faces) {
+    console.log(faces);
+  }
+
   return (
     <Block>
       <Camera
@@ -119,7 +127,15 @@ const MyCamera = () => {
         useCamera2Api={Platform.OS === 'ios'}
         ratio={'16:9'}
         ref={cameraRef}
-        flashMode={flashMode}>
+        onFacesDetected={handleFacesDetected}
+        flashMode={flashMode}
+        faceDetectorSettings={{
+          mode: FaceDetector.FaceDetectorMode.fast,
+          detectLandmarks: FaceDetector.FaceDetectorLandmarks.none,
+          runClassifications: FaceDetector.FaceDetectorClassifications.none,
+          minDetectionInterval: 100,
+          tracking: true,
+        }}>
         <View
           style={{
             position: 'absolute',
