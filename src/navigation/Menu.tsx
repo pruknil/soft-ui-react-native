@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {Alert, Animated, Linking, StyleSheet} from 'react-native';
+import {Animated, StyleSheet} from 'react-native';
 
 import {
   useIsDrawerOpen,

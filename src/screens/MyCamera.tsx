@@ -1,16 +1,5 @@
-import React, {
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from 'react';
-import {
-  Dimensions,
-  Platform,
-  StyleSheet,
-  View,
-  TouchableOpacity,
-} from 'react-native';
+import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
+import {Platform, View, TouchableOpacity} from 'react-native';
 import {Block, Image} from '../components/';
 import {Camera, CameraType} from 'expo-camera';
 import * as FaceDetector from 'expo-face-detector';
@@ -19,15 +8,15 @@ import {MaterialCommunityIcons} from '@expo/vector-icons';
 import {useTheme} from '../hooks';
 import {useNavigation} from '@react-navigation/core';
 import {useHeaderHeight} from '@react-navigation/stack';
-const {width: windowWidth} = Dimensions.get('window');
+//const {width: windowWidth} = Dimensions.get('window');
 
-const PREVIEW_SIZE = 325;
-const PREVIEW_RECT = {
-  minX: (windowWidth - PREVIEW_SIZE) / 2,
-  minY: 50,
-  width: PREVIEW_SIZE,
-  height: PREVIEW_SIZE,
-};
+//const PREVIEW_SIZE = 325;
+// const PREVIEW_RECT = {
+//   minX: (windowWidth - PREVIEW_SIZE) / 2,
+//   minY: 50,
+//   width: PREVIEW_SIZE,
+//   height: PREVIEW_SIZE,
+// };
 
 const MyCamera = () => {
   const {assets, sizes} = useTheme();
@@ -59,7 +48,7 @@ const MyCamera = () => {
   useEffect(() => {
     requestCameraPermission();
     requestMediaPermission();
-  }, []);
+  }, [requestCameraPermission, requestMediaPermission]);
   if (requestCameraPermission === null) {
     // eslint-disable-next-line react/jsx-no-undef
     return <Block>No access to camera</Block>;
@@ -71,7 +60,7 @@ const MyCamera = () => {
   }
 
   if (mediaPermission === null) {
-    requestMediaPermission().then((r) => {
+    requestMediaPermission().then(() => {
       return <Block>No access to Media</Block>;
     });
   }
@@ -97,7 +86,7 @@ const MyCamera = () => {
   }
 
   function takePicture() {
-    onSaveImageAsync().then((r) => {});
+    onSaveImageAsync().then(() => {});
   }
 
   const onSaveImageAsync = async () => {
@@ -200,85 +189,85 @@ const MyCamera = () => {
     </Block>
   );
 };
-
-const styles = StyleSheet.create({
-  master: {
-    flex: 1,
-    alignSelf: 'stretch',
-    paddingHorizontal: 15,
-  },
-  header: {
-    fontSize: 32,
-  },
-  mask: {
-    borderRadius: PREVIEW_SIZE / 2,
-    height: PREVIEW_SIZE,
-    width: PREVIEW_SIZE,
-    marginTop: PREVIEW_RECT.minY,
-    alignSelf: 'center',
-    backgroundColor: 'white',
-  },
-  circularProgress: {
-    width: PREVIEW_SIZE,
-    height: PREVIEW_SIZE,
-    marginTop: PREVIEW_RECT.minY,
-    marginLeft: PREVIEW_RECT.minX,
-  },
-  instructions: {
-    fontSize: 20,
-    textAlign: 'center',
-    top: 25,
-    position: 'absolute',
-  },
-  instructionsContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: PREVIEW_RECT.minY + PREVIEW_SIZE,
-  },
-  action: {
-    fontSize: 24,
-    textAlign: 'center',
-    fontWeight: 'bold',
-  },
-  alert: {
-    backgroundColor: '#EEEEEE',
-  },
-  icon: {
-    flex: 1,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#C3272B',
-    width: '100%',
-  },
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: -16,
-    marginBottom: 16,
-  },
-  contentText: {
-    textAlign: 'center',
-  },
-  btn: {
-    borderRadius: 32,
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: 8,
-    alignSelf: 'stretch',
-    backgroundColor: '#4CB748',
-    marginTop: 16,
-    minWidth: '50%',
-    paddingHorizontal: 16,
-  },
-  btnText: {
-    color: '#FFFFFF',
-  },
-});
+//
+// const styles = StyleSheet.create({
+//   master: {
+//     flex: 1,
+//     alignSelf: 'stretch',
+//     paddingHorizontal: 15,
+//   },
+//   header: {
+//     fontSize: 32,
+//   },
+//   mask: {
+//     borderRadius: PREVIEW_SIZE / 2,
+//     height: PREVIEW_SIZE,
+//     width: PREVIEW_SIZE,
+//     marginTop: PREVIEW_RECT.minY,
+//     alignSelf: 'center',
+//     backgroundColor: 'white',
+//   },
+//   circularProgress: {
+//     width: PREVIEW_SIZE,
+//     height: PREVIEW_SIZE,
+//     marginTop: PREVIEW_RECT.minY,
+//     marginLeft: PREVIEW_RECT.minX,
+//   },
+//   instructions: {
+//     fontSize: 20,
+//     textAlign: 'center',
+//     top: 25,
+//     position: 'absolute',
+//   },
+//   instructionsContainer: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     marginTop: PREVIEW_RECT.minY + PREVIEW_SIZE,
+//   },
+//   action: {
+//     fontSize: 24,
+//     textAlign: 'center',
+//     fontWeight: 'bold',
+//   },
+//   alert: {
+//     backgroundColor: '#EEEEEE',
+//   },
+//   icon: {
+//     flex: 1,
+//     display: 'flex',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     backgroundColor: '#C3272B',
+//     width: '100%',
+//   },
+//   content: {
+//     display: 'flex',
+//     flexDirection: 'column',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     marginTop: -16,
+//     marginBottom: 16,
+//   },
+//   contentText: {
+//     textAlign: 'center',
+//   },
+//   btn: {
+//     borderRadius: 32,
+//     display: 'flex',
+//     flexDirection: 'row',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     paddingVertical: 8,
+//     alignSelf: 'stretch',
+//     backgroundColor: '#4CB748',
+//     marginTop: 16,
+//     minWidth: '50%',
+//     paddingHorizontal: 16,
+//   },
+//   btnText: {
+//     color: '#FFFFFF',
+//   },
+// });
 
 export default MyCamera;
