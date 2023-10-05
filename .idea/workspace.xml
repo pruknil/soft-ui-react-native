@@ -18,9 +18,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GoLibraries">
-    <option name="indexEntireGoPath" value="false" />
-  </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
       <set>
@@ -46,6 +43,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="GO_FMT" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
