@@ -215,6 +215,7 @@ export interface ThemeIcons {
   basket: ImageSourcePropType;
   bell: ImageSourcePropType;
   calendar: ImageSourcePropType;
+  camera: ImageSourcePropType;
   chat: ImageSourcePropType;
   check: ImageSourcePropType;
   clock: ImageSourcePropType;

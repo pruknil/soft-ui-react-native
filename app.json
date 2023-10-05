@@ -20,13 +20,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pruknil.rnsoftuikitfree"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#CB0C9F"
-      }
+      },
+      "package": "com.pruknil.rnsoftuikitfree"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -36,11 +38,19 @@
         "projectId": "0874358b-6211-445f-a0a1-1f91ddedc9b7"
       }
     },
+    "plugins": [
+      "expo-localization",
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow $(PRODUCT_NAME) to access your photos.",
+          "savePhotosPermission": "Allow $(PRODUCT_NAME) to save photos.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ]
+    ],
     "runtimeVersion": {
       "policy": "sdkVersion"
-    },
-    "plugins": [
-      "expo-localization"
-    ]
+    }
   }
 }

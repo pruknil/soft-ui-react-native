@@ -40,6 +40,7 @@ export const ICONS: ThemeIcons = {
   basket: require('../assets/icons/basket.png'),
   bell: require('../assets/icons/bell.png'),
   calendar: require('../assets/icons/calendar.png'),
+  camera: require('../assets/icons/camera.png'),
   chat: require('../assets/icons/chat.png'),
   check: require('../assets/icons/check.png'),
   clock: require('../assets/icons/clock.png'),

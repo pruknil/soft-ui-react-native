@@ -63,7 +63,8 @@
     "profile": "Profile",
     "settings": "Settings",
     "register": "Create account",
-    "extra": "Extra - Automotive"
+    "extra": "Extra - Automotive",
+    "camera": "Camera"
   },
   "navigation": {
     "home": "Soft UI",
@@ -82,7 +83,8 @@
     "register": "Register",
     "login": "Login",
     "extra": "Automotive",
-    "shopping": "Shopping Cart"
+    "shopping": "Shopping Cart",
+    "camera": "Camera"
   },
   "menu": {
     "started": "Getting Started",

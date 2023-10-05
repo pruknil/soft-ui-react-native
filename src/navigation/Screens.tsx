@@ -1,7 +1,15 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {Articles, Components, Home, Profile, Register, Pro} from '../screens';
+import {
+  Articles,
+  Components,
+  Home,
+  Profile,
+  Register,
+  Pro,
+  MyCamera,
+} from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 import Settings from '../screens/Settings';
 
@@ -17,6 +25,12 @@ export default () => {
         name="Home"
         component={Home}
         options={{title: t('navigation.home')}}
+      />
+
+      <Stack.Screen
+        name="MyCamera"
+        component={MyCamera}
+        options={screenOptions.camera}
       />
 
       <Stack.Screen
