@@ -1,18 +1,41 @@
 import React, {useEffect, useLayoutEffect, useState} from 'react';
-import {FlatList} from 'react-native';
+import {RefreshControl} from 'react-native';
 
 import {useNavigation} from '@react-navigation/core';
 import {useHeaderHeight} from '@react-navigation/stack';
 
 import {useTheme, useData, useTranslation} from '../hooks/';
-import { Block, Button, Switch, Image, Modal, Text, Input, Messages } from "../components/";
-import { IMessage } from '../constants/types';
+import {
+  Block,
+  Button,
+  Switch,
+  Image,
+  Modal,
+  Text,
+  Input,
+  Messages,
+} from '../components/';
+import {IMessage} from '../constants/types';
+import axios from 'axios';
 
 const Chat = () => {
-  const { assets, sizes } = useTheme();
+  const {assets, sizes} = useTheme();
   const navigation = useNavigation();
   const headerHeight = useHeaderHeight();
-  const { messages } = useData();
+  //const {messages} = useData();
+
+  const [messages, setMessages] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setErrorFlag] = useState(false);
+  const [refreshing, setRefreshing] = React.useState(false);
+
+  const onRefresh = () => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 2000);
+  };
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerBackground: () => (
@@ -23,23 +46,61 @@ const Chat = () => {
           height={headerHeight}
           source={assets.header}
         />
-      )
+      ),
     });
   }, [assets.header, navigation, sizes.width, headerHeight]);
+  const baseUrl = 'http://10.167.1.138:8080';
+  useEffect(() => {
+    const abortController = new AbortController();
+    const url = `${baseUrl}/chat`;
+
+    const fetchUsers = async () => {
+      try {
+        setIsLoading(true);
+
+        const response = await axios.get(url, {
+          signal: abortController.signal,
+        });
+
+        if (response.status === 200) {
+          setMessages(response.data);
+          setIsLoading(false);
+          console.log(response);
+          return;
+        } else {
+          throw new Error('Failed to fetch users');
+        }
+      } catch (error) {
+        if (abortController.signal.aborted) {
+          console.log('Data fetching cancelled');
+        } else {
+          setErrorFlag(true);
+          setIsLoading(false);
+        }
+      }
+    };
+
+    fetchUsers();
+
+    return () => abortController.abort('Data fetching cancelled');
+  }, [refreshing]);
 
   return (
     <Block safe>
       <Block
         scroll
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingVertical: sizes.padding }}>
+        contentContainerStyle={{paddingVertical: sizes.padding}}>
         <Block>
-          <Input
-            search
-            marginBottom={sizes.sm}
-            placeholder="Search"
-          />
+          <Input search marginBottom={sizes.sm} placeholder="Search" />
           <Block>
+            {isLoading && <Text> Loading </Text>}
+
+            {!isLoading && hasError && <Text> An error has occurred </Text>}
+
             {messages?.map((message: IMessage) => (
               <Messages {...message} key={`chat-${message?.id}`} />
             ))}

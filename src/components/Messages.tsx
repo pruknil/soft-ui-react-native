@@ -7,8 +7,8 @@ import Image from './Image';
 import {useTheme} from '../hooks';
 import moment from 'moment';
 
-const Messages = ({id, text, createdAt, user}: IMessage) => {
-  const {assets, colors, gradients, sizes} = useTheme();
+const Messages = ({text, createdAt, user}: IMessage) => {
+  const {sizes} = useTheme();
   return (
     <Block marginTop={sizes.sm}>
       <Block row marginLeft={sizes.xs} marginBottom={sizes.xs} align={'center'}>
@@ -23,13 +23,13 @@ const Messages = ({id, text, createdAt, user}: IMessage) => {
             </Text>
             <Block>
               <Text size={sizes.s} gray style={{textAlign: 'right'}}>
-                {moment(createdAt).calendar(null,{
-                  lastDay : '[Yesterday]',
-                  sameDay : 'LT',
-                  nextDay : '[Tomorrow]',
-                  lastWeek : 'dddd',
-                  nextWeek : 'dddd',
-                  sameElse : 'L'
+                {moment(createdAt).calendar(null, {
+                  lastDay: '[Yesterday]',
+                  sameDay: 'LT',
+                  nextDay: '[Tomorrow]',
+                  lastWeek: 'dddd',
+                  nextWeek: 'dddd',
+                  sameElse: 'L',
                 })}
               </Text>
             </Block>
