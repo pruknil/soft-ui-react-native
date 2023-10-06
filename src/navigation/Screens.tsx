@@ -37,7 +37,7 @@ export default () => {
       <Stack.Screen
         name="Chat"
         component={Chat}
-        options={screenOptions.camera}
+        options={{title: t('navigation.chat'), headerRight: undefined}}
       />
 
       <Stack.Screen

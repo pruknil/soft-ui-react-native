@@ -14,6 +14,12 @@ export interface IUser {
   social?: {twitter?: string; dribbble?: string};
   about?: string;
 }
+export interface IMessage {
+  id: number | string;
+  text?: string;
+  createdAt?: number | Date;
+  user?: IUser;
+}
 
 export interface ICategory {
   id?: number;

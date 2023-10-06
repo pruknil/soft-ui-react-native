@@ -5,13 +5,14 @@ import {useNavigation} from '@react-navigation/core';
 import {useHeaderHeight} from '@react-navigation/stack';
 
 import {useTheme, useData, useTranslation} from '../hooks/';
-import {Block, Button, Switch, Image, Modal, Text} from '../components/';
+import { Block, Button, Switch, Image, Modal, Text, Input, Messages } from "../components/";
+import { IMessage } from '../constants/types';
 
 const Chat = () => {
-  const {assets, sizes} = useTheme();
+  const { assets, sizes } = useTheme();
   const navigation = useNavigation();
   const headerHeight = useHeaderHeight();
-
+  const { messages } = useData();
   useLayoutEffect(() => {
     navigation.setOptions({
       headerBackground: () => (
@@ -22,7 +23,7 @@ const Chat = () => {
           height={headerHeight}
           source={assets.header}
         />
-      ),
+      )
     });
   }, [assets.header, navigation, sizes.width, headerHeight]);
 
@@ -31,8 +32,19 @@ const Chat = () => {
       <Block
         scroll
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{paddingVertical: sizes.padding}}>
-        <Block></Block>
+        contentContainerStyle={{ paddingVertical: sizes.padding }}>
+        <Block>
+          <Input
+            search
+            marginBottom={sizes.sm}
+            placeholder="Search"
+          />
+          <Block>
+            {messages?.map((message: IMessage) => (
+              <Messages {...message} key={`chat-${message?.id}`} />
+            ))}
+          </Block>
+        </Block>
       </Block>
     </Block>
   );

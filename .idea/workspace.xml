@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0fb4862-3fd7-4126-a55b-f3ee30ac3387" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/screens/Chat.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messages.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/translations/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/translations/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/translations/th.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/translations/th.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigation/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/Menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/mocks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/mocks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useData.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useScreenOptions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useScreenOptions.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/navigation/Screens.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/Screens.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/Chat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Chat.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +59,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/screens/chat" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -72,11 +76,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/screens/chat" />
       <recent name="$PROJECT_DIR$/src/assets/icons" />
       <recent name="$PROJECT_DIR$/src/screens" />
       <recent name="$PROJECT_DIR$/src/constants/translations" />
-      <recent name="$PROJECT_DIR$/src/constants" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/screens" />
@@ -162,6 +166,7 @@
     <MESSAGE value="add take picture" />
     <MESSAGE value="fix screen" />
     <MESSAGE value="code style" />
-    <option name="LAST_COMMIT_MESSAGE" value="code style" />
+    <MESSAGE value="new branch chat" />
+    <option name="LAST_COMMIT_MESSAGE" value="new branch chat" />
   </component>
 </project>

@@ -8,6 +8,7 @@ import {
   IUser,
   IUseData,
   ITheme,
+  IMessage,
 } from '../constants/types';
 
 import {
@@ -16,6 +17,7 @@ import {
   TRENDING,
   CATEGORIES,
   ARTICLES,
+  MESSSAGES,
 } from '../constants/mocks';
 import {light, dark} from '../constants';
 
@@ -30,6 +32,7 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
   const [trending, setTrending] = useState<IProduct[]>(TRENDING);
   const [categories, setCategories] = useState<ICategory[]>(CATEGORIES);
   const [articles, setArticles] = useState<IArticle[]>(ARTICLES);
+  const [messages, setMessages] = useState<IMessage[]>(MESSSAGES);
   const [article, setArticle] = useState<IArticle>({});
 
   // get isDark mode from storage
@@ -116,6 +119,8 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
     setArticles,
     article,
     handleArticle,
+    messages,
+    setMessages,
   };
 
   return (

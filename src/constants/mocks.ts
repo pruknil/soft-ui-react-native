@@ -460,41 +460,41 @@ export const RECOMMENDATIONS: IArticle[] = [
 // chat messages
 export const MESSSAGES = [
   {
-    _id: 1,
+    id: 1,
     text: 'Bye, bye 👋🏻',
-    createdAt: dayjs().subtract(1, 'm').toDate(),
+    createdAt: dayjs().subtract(1000, 'm').toDate(),
     user: {
-      _id: USERS[0].id,
+      id: USERS[0].id,
       name: USERS[0].name,
       avatar: USERS[0].avatar,
     },
   },
   {
-    _id: 2,
+    id: 2,
     text: 'Ok. Cool! See you 😁',
-    createdAt: dayjs().subtract(2, 'm').toDate(),
+    createdAt: dayjs().subtract(2000, 'm').toDate(),
     user: {
-      _id: USERS[1].id,
+      id: USERS[1].id,
       name: USERS[1].name,
       avatar: USERS[1].avatar,
     },
   },
   {
-    _id: 3,
+    id: 3,
     text: 'Sure, just let me finish somerhing and I’ll call you.',
-    createdAt: dayjs().subtract(3, 'm').toDate(),
+    createdAt: dayjs().subtract(3000, 'm').toDate(),
     user: {
-      _id: USERS[0].id,
+      id: USERS[0].id,
       name: USERS[0].name,
       avatar: USERS[0].avatar,
     },
   },
   {
-    _id: 4,
+    id: 4,
     text: 'Hey there! How are you today? Can we meet and talk about location? Thanks!',
-    createdAt: dayjs().subtract(4, 'm').toDate(),
+    createdAt: dayjs().subtract(4000, 'm').toDate(),
     user: {
-      _id: USERS[1].id,
+      id: USERS[1].id,
       name: USERS[1].name,
       avatar: USERS[1].avatar,
     },

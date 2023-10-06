@@ -91,7 +91,7 @@ export default () => {
       ...menu,
       headerTitle: () => (
         <Text p white>
-          {t('navigation.camera')}
+          Camera
         </Text>
       ),
       headerRight: () => null,
