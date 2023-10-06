@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0fb4862-3fd7-4126-a55b-f3ee30ac3387" name="Default Changelist" comment="" />
+    <list default="true" id="e0fb4862-3fd7-4126-a55b-f3ee30ac3387" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/screens/Chat.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/translations/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/translations/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/translations/th.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/translations/th.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigation/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/Menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigation/Screens.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/Screens.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/index.ts" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/camera" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,12 +55,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/icons" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/screens/chat" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="Push.Settings">
     <force-push-targets>
@@ -63,14 +71,16 @@
     <option name="SHOW_DIALOG" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/assets/icons" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/screens/chat" />
       <recent name="$PROJECT_DIR$/src/assets/icons" />
       <recent name="$PROJECT_DIR$/src/screens" />
       <recent name="$PROJECT_DIR$/src/constants/translations" />
       <recent name="$PROJECT_DIR$/src/constants" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/screens" />
+      <recent name="$PROJECT_DIR$/src/assets/icons" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -118,8 +128,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.web" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.web" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.apk" />
         <item itemvalue="npm.web" />
@@ -151,6 +161,7 @@
     <MESSAGE value="format" />
     <MESSAGE value="add take picture" />
     <MESSAGE value="fix screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix screen" />
+    <MESSAGE value="code style" />
+    <option name="LAST_COMMIT_MESSAGE" value="code style" />
   </component>
 </project>

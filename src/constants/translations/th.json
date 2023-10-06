@@ -64,7 +64,8 @@
     "settings": "การตั้งค่า",
     "register": "สร้างบัญชี",
     "extra": "เสริม-ยานยนต์",
-    "camera": "กล้อง"
+    "camera": "กล้อง",
+    "chat": "แชท"
   },
   "navigation": {
     "home": "UI ที่นุ่มนวล",

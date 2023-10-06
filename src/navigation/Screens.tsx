@@ -9,6 +9,7 @@ import {
   Register,
   Pro,
   MyCamera,
+  Chat,
 } from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 import Settings from '../screens/Settings';
@@ -30,6 +31,12 @@ export default () => {
       <Stack.Screen
         name="MyCamera"
         component={MyCamera}
+        options={screenOptions.camera}
+      />
+
+      <Stack.Screen
+        name="Chat"
+        component={Chat}
         options={screenOptions.camera}
       />
 

@@ -1,7 +1,6 @@
 export {default as About} from './Pro';
 export {default as Agreement} from './Pro';
 export {default as Articles} from './Articles';
-export {default as Chat} from './Pro';
 export {default as Components} from './Components';
 export {default as Extras} from './Pro';
 export {default as Home} from './Home';
@@ -18,3 +17,4 @@ export {default as Settings} from './Pro';
 export {default as Shopping} from './Pro';
 export {default as Pro} from './Pro';
 export {default as MyCamera} from './MyCamera';
+export {default as Chat} from './Chat';

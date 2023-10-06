@@ -64,7 +64,8 @@
     "settings": "Settings",
     "register": "Create account",
     "extra": "Extra - Automotive",
-    "camera": "Camera"
+    "camera": "Camera",
+    "chat": "Chat"
   },
   "navigation": {
     "home": "Soft UI",
