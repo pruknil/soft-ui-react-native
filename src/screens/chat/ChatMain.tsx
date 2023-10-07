@@ -34,9 +34,6 @@ const ChatMain = () => {
   const onRefresh = () => {
     setChange(!change);
     setRefreshing(true);
-    // setTimeout(() => {
-    //   setRefreshing(false);
-    // }, 2000);
   };
 
   useLayoutEffect(() => {

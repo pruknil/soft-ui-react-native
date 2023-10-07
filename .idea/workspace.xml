@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e0fb4862-3fd7-4126-a55b-f3ee30ac3387" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useData.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/chat/Chat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/chat/Chat.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/chat/ChatMain.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/chat/ChatMain.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -165,6 +168,7 @@
     <MESSAGE value="fix refresh double" />
     <MESSAGE value="add chat reply screen" />
     <MESSAGE value="keyboard avoid chat" />
-    <option name="LAST_COMMIT_MESSAGE" value="keyboard avoid chat" />
+    <MESSAGE value="fix ios keyboard avoid" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix ios keyboard avoid" />
   </component>
 </project>

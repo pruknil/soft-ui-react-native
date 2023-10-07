@@ -35,6 +35,9 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
   const [messages, setMessages] = useState<IMessage[]>(MESSSAGES);
   const [article, setArticle] = useState<IArticle>({});
 
+  useEffect(() => {
+    console.debug("Hello")
+  }, []);
   // get isDark mode from storage
   const getIsDark = useCallback(async () => {
     // get preferance gtom storage

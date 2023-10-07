@@ -14,6 +14,13 @@ export interface IUser {
   social?: {twitter?: string; dribbble?: string};
   about?: string;
 }
+export interface IChat {
+  id: number | string;
+  text?: string;
+  readed?: boolean;
+  createdAt?: number | Date;
+  u?: boolean;
+}
 export interface IMessage {
   id: number | string;
   text?: string;
@@ -21,7 +28,6 @@ export interface IMessage {
   createdAt?: number | Date;
   user?: IUser;
 }
-
 export interface ICategory {
   id?: number;
   name?: string;
