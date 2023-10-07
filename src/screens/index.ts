@@ -17,4 +17,4 @@ export {default as Settings} from './Pro';
 export {default as Shopping} from './Pro';
 export {default as Pro} from './Pro';
 export {default as MyCamera} from './MyCamera';
-export {default as Chat} from './Chat';
+export {default as Chat} from './chat/ChatMain';

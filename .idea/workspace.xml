@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0fb4862-3fd7-4126-a55b-f3ee30ac3387" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/screens/chat/ChatMain.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/Chat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Chat.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigation/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/Menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigation/Screens.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/Screens.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/Chat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/chat/Chat.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/index.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +55,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/screens/chat" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -67,16 +71,17 @@
     <option name="SHOW_DIALOG" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/screens/chat" />
+      <recent name="$PROJECT_DIR$/src/screens" />
+      <recent name="$PROJECT_DIR$/src/assets/icons" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/screens/chat" />
+      <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/assets/icons" />
       <recent name="$PROJECT_DIR$/src/screens" />
       <recent name="$PROJECT_DIR$/src/constants/translations" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/screens" />
-      <recent name="$PROJECT_DIR$/src/assets/icons" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -162,6 +167,7 @@
     <MESSAGE value="init chat screen" />
     <MESSAGE value="call axios" />
     <MESSAGE value="add unread" />
-    <option name="LAST_COMMIT_MESSAGE" value="add unread" />
+    <MESSAGE value="fix refresh double" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix refresh double" />
   </component>
 </project>

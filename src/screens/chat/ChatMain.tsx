@@ -4,7 +4,7 @@ import {RefreshControl} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 import {useHeaderHeight} from '@react-navigation/stack';
 
-import {useTheme, useData, useTranslation} from '../hooks/';
+import {useTheme, useData, useTranslation} from '../../hooks/';
 import {
   Block,
   Button,
@@ -14,11 +14,11 @@ import {
   Text,
   Input,
   Messages,
-} from '../components/';
-import {IMessage} from '../constants/types';
+} from '../../components/';
+import {IMessage} from '../../constants/types';
 import axios from 'axios';
 
-const Chat = () => {
+const ChatMain = () => {
   const {t} = useTranslation();
   const {colors, assets, sizes} = useTheme();
   const navigation = useNavigation();
@@ -118,4 +118,4 @@ const Chat = () => {
     </Block>
   );
 };
-export default Chat;
+export default ChatMain;

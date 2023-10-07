@@ -9,8 +9,9 @@ import {
   Register,
   Pro,
   MyCamera,
-  Chat,
 } from '../screens';
+import ChatMain from '../screens/chat/ChatMain';
+import Chat from '../screens/chat/Chat';
 import {useScreenOptions, useTranslation} from '../hooks';
 import Settings from '../screens/Settings';
 
@@ -35,11 +36,15 @@ export default () => {
       />
 
       <Stack.Screen
-        name="Chat"
-        component={Chat}
+        name="ChatMain"
+        component={ChatMain}
         options={{title: t('navigation.chat'), headerRight: undefined}}
       />
-
+      <Stack.Screen
+        name="Chat"
+        component={Chat}
+        options={{...screenOptions.back, title: t('navigation.chat')}}
+      />
       <Stack.Screen
         name="Components"
         component={Components}

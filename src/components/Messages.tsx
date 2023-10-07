@@ -7,12 +7,13 @@ import Image from './Image';
 import {useTheme} from '../hooks';
 import moment from 'moment';
 import {TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/core';
 
 const Messages = ({text, createdAt, unRead, user}: IMessage) => {
   const {assets, colors, fonts, gradients, sizes} = useTheme();
-
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => navigation.navigate('Chat', {user})}>
       <Block color={colors.card} flex={0} marginTop={0} padding={sizes.xs}>
         <Block
           row

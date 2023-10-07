@@ -86,7 +86,7 @@ const DrawerContent = (
     {name: t('screens.components'), to: 'Components', icon: assets.components},
     {name: t('screens.articles'), to: 'Articles', icon: assets.document},
     {name: t('screens.camera'), to: 'MyCamera', icon: assets.camera},
-    {name: t('screens.chat'), to: 'Chat', icon: assets.chat},
+    {name: t('screens.chat'), to: 'ChatMain', icon: assets.chat},
     {name: t('screens.profile'), to: 'Profile', icon: assets.users},
     {name: t('screens.settings'), to: 'Settings', icon: assets.settings},
     {name: t('screens.register'), to: 'Register', icon: assets.register},
