@@ -4,7 +4,6 @@
     <list default="true" id="e0fb4862-3fd7-4126-a55b-f3ee30ac3387" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/types/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/Chat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Chat.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -162,6 +161,7 @@
     <MESSAGE value="new branch chat" />
     <MESSAGE value="init chat screen" />
     <MESSAGE value="call axios" />
-    <option name="LAST_COMMIT_MESSAGE" value="call axios" />
+    <MESSAGE value="add unread" />
+    <option name="LAST_COMMIT_MESSAGE" value="add unread" />
   </component>
 </project>

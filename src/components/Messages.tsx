@@ -13,7 +13,7 @@ const Messages = ({text, createdAt, unRead, user}: IMessage) => {
 
   return (
     <TouchableOpacity>
-      <Block color={colors.card} flex={0} marginTop={0}>
+      <Block color={colors.card} flex={0} marginTop={0} padding={sizes.xs}>
         <Block
           row
           marginLeft={sizes.xs}

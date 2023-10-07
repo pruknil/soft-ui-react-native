@@ -29,12 +29,14 @@ const Chat = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setErrorFlag] = useState(false);
   const [refreshing, setRefreshing] = React.useState(false);
+  const [change, setChange] = useState(false);
 
   const onRefresh = () => {
+    setChange(!change);
     setRefreshing(true);
-    setTimeout(() => {
-      setRefreshing(false);
-    }, 2000);
+    // setTimeout(() => {
+    //   setRefreshing(false);
+    // }, 2000);
   };
 
   useLayoutEffect(() => {
@@ -66,7 +68,8 @@ const Chat = () => {
         if (response.status === 200) {
           setMessages(response.data);
           setIsLoading(false);
-          console.log(response);
+          setRefreshing(false);
+          console.debug(response.data);
           return;
         } else {
           throw new Error('Failed to fetch users');
@@ -77,13 +80,14 @@ const Chat = () => {
         } else {
           setErrorFlag(true);
           setIsLoading(false);
+          setRefreshing(false);
         }
       }
     };
 
     fetchUsers();
     return () => abortController.abort('Data fetching cancelled');
-  }, [refreshing]);
+  }, [change]);
 
   return (
     <Block safe>
