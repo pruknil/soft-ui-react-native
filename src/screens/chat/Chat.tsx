@@ -49,10 +49,9 @@ const Chat = ({route, navigation}) => {
 
   return (
     <Block safe>
-      <Block scroll style={{flex: 1}}>
-        {myloop}
-      </Block>
+      <Block scroll>{myloop}</Block>
       <KeyboardAvoidingView
+        keyboardVerticalOffset={headerHeight}
         behavior={Platform.OS == 'ios' ? 'padding' : 'height'}>
         <Block color={colors.card} flex={0} padding={sizes.s}>
           <Input placeholder={t('common.message')} />

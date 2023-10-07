@@ -164,6 +164,7 @@
     <MESSAGE value="add unread" />
     <MESSAGE value="fix refresh double" />
     <MESSAGE value="add chat reply screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="add chat reply screen" />
+    <MESSAGE value="keyboard avoid chat" />
+    <option name="LAST_COMMIT_MESSAGE" value="keyboard avoid chat" />
   </component>
 </project>
