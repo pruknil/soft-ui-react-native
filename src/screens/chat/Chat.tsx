@@ -1,18 +1,8 @@
-import React, {useEffect, useLayoutEffect, useState} from 'react';
+import React, {useLayoutEffect} from 'react';
 import {useHeaderHeight} from '@react-navigation/stack';
-
-import {useTheme, useData, useTranslation} from '../../hooks/';
-import {
-  Block,
-  Button,
-  Switch,
-  Image,
-  Modal,
-  Text,
-  Input,
-  Messages,
-} from '../../components/';
-import axios from 'axios';
+import {useTheme, useTranslation} from '../../hooks/';
+import {Block, Image, Text, Input} from '../../components/';
+import {KeyboardAvoidingView, Platform, View} from 'react-native';
 
 const Chat = ({route, navigation}) => {
   const {t} = useTranslation();
@@ -24,7 +14,7 @@ const Chat = ({route, navigation}) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerTitle: () => (
-        <Text p white>
+        <Text h5 bold color={colors.white}>
           {user.name}
         </Text>
       ),
@@ -39,15 +29,37 @@ const Chat = ({route, navigation}) => {
       ),
     });
   }, [assets.header, navigation, sizes.width, headerHeight]);
+  var myloop = [];
+
+  for (let i = 0; i < 30; i++) {
+    myloop.push(
+      <View
+        style={{
+          height: 80,
+          margin: 10,
+          borderWidth: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+        key={i}>
+        <Text>{i}</Text>
+      </View>,
+    );
+  }
 
   return (
     <Block safe>
-      <Block
-        scroll
-        showsVerticalScrollIndicator={false}
-        //contentContainerStyle={{paddingVertical: sizes.padding}}
-      />
+      <Block scroll style={{flex: 1}}>
+        {myloop}
+      </Block>
+      <KeyboardAvoidingView
+        behavior={Platform.OS == 'ios' ? 'padding' : 'height'}>
+        <Block color={colors.card} flex={0} padding={sizes.s}>
+          <Input placeholder={t('common.message')} />
+        </Block>
+      </KeyboardAvoidingView>
     </Block>
   );
 };
+
 export default Chat;
