@@ -17,6 +17,7 @@ export interface IUser {
 export interface IMessage {
   id: number | string;
   text?: string;
+  unRead?: number;
   createdAt?: number | Date;
   user?: IUser;
 }

@@ -19,7 +19,8 @@ import {IMessage} from '../constants/types';
 import axios from 'axios';
 
 const Chat = () => {
-  const {assets, sizes} = useTheme();
+  const {t} = useTranslation();
+  const {colors, assets, sizes} = useTheme();
   const navigation = useNavigation();
   const headerHeight = useHeaderHeight();
   //const {messages} = useData();
@@ -81,7 +82,6 @@ const Chat = () => {
     };
 
     fetchUsers();
-
     return () => abortController.abort('Data fetching cancelled');
   }, [refreshing]);
 
@@ -93,9 +93,13 @@ const Chat = () => {
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{paddingVertical: sizes.padding}}>
+        //contentContainerStyle={{paddingVertical: sizes.padding}}
+      >
         <Block>
-          <Input search marginBottom={sizes.sm} placeholder="Search" />
+          <Block color={colors.card} flex={0} padding={sizes.s}>
+            <Input search placeholder={t('common.search')} />
+          </Block>
+
           <Block>
             {isLoading && <Text> Loading </Text>}
 
