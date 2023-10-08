@@ -5,6 +5,7 @@ import {Block, Image, Text, Input, Messages} from '../../components/';
 import {KeyboardAvoidingView, Platform, View} from 'react-native';
 import axios from 'axios';
 import {IChat, IMessage} from '../../constants/types';
+import moment from 'moment';
 
 const Chat = ({route, navigation}) => {
   const {t} = useTranslation();
@@ -68,40 +69,36 @@ const Chat = ({route, navigation}) => {
       ),
     });
   }, [assets.header, navigation, sizes.width, headerHeight]);
-  // var myloop = [];
-  //
-  // for (let i = 0; i < 30; i++) {
-  //   myloop.push(
-  //     <View
-  //       style={{
-  //         height: 80,
-  //         margin: 10,
-  //         borderWidth: 1,
-  //         justifyContent: 'center',
-  //         alignItems: 'center',
-  //       }}
-  //       key={i}>
-  //       <Text>{i}</Text>
-  //     </View>,
-  //   );
-  // }
 
   return (
     <Block safe>
       <Block scroll>
         {messages?.map((chat: IChat) => (
-          <Block width={'70%'} row>
-            <Image
-              width={40}
-              height={40}
-              source={{uri: user?.avatar}}
-            />
-            <Block card >
-              <Text key={`chat-${chat?.id}`} align={'left'}>
-                {chat.text}
-              </Text>
+          <View
+            style={{
+              flexDirection: chat.u ? 'row-reverse' : 'row',
+              alignSelf: chat.u ? 'flex-end' : 'flex-start',
+              padding: 2,
+            }}
+            width={'80%'}
+            key={`chat-${chat?.id}`}>
+            {!chat.u && (
+              <Image width={40} height={40} source={{uri: user?.avatar}} />
+            )}
+            <Block card>
+              <Text align={'left'}>{chat.text}</Text>
             </Block>
-          </Block>
+            <Text size={sizes.s} gray paddingHorizontal={3}>
+              {moment(chat.createdAt).calendar(null, {
+                lastDay: '[Yesterday]',
+                sameDay: 'LT',
+                nextDay: '[Tomorrow]',
+                lastWeek: 'dddd',
+                nextWeek: 'dddd',
+                sameElse: 'L',
+              })}
+            </Text>
+          </View>
         ))}
       </Block>
       <KeyboardAvoidingView
