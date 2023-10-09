@@ -14,6 +14,7 @@ import ChatMain from '../screens/chat/ChatMain';
 import Chat from '../screens/chat/Chat';
 import {useScreenOptions, useTranslation} from '../hooks';
 import Settings from '../screens/Settings';
+import ChatProfile from '../screens/chat/ChatProfile';
 
 const Stack = createStackNavigator();
 
@@ -45,6 +46,12 @@ export default () => {
         component={Chat}
         options={{...screenOptions.back, title: t('navigation.chat')}}
       />
+      <Stack.Screen
+        name="ChatProfile"
+        component={ChatProfile}
+        options={{headerShown: false}}
+      />
+
       <Stack.Screen
         name="Components"
         component={Components}

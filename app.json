@@ -36,6 +36,9 @@
     "extra": {
       "eas": {
         "projectId": "0874358b-6211-445f-a0a1-1f91ddedc9b7"
+      },
+      "api": {
+        "host": "http://192.168.5.114:8080"
       }
     },
     "plugins": [

@@ -2,10 +2,17 @@ import React, {useEffect, useLayoutEffect, useState} from 'react';
 import {useHeaderHeight} from '@react-navigation/stack';
 import {useData, useTheme, useTranslation} from '../../hooks/';
 import {Block, Image, Text, Input, Messages} from '../../components/';
-import {KeyboardAvoidingView, Platform, View} from 'react-native';
+import {
+  KeyboardAvoidingView,
+  Platform,
+  TouchableHighlight,
+  TouchableOpacity, TouchableWithoutFeedback,
+  View
+} from "react-native";
 import axios from 'axios';
 import {IChat, IMessage} from '../../constants/types';
 import moment from 'moment';
+import Constants from "expo-constants";
 
 const Chat = ({route, navigation}) => {
   const {t} = useTranslation();
@@ -16,10 +23,9 @@ const Chat = ({route, navigation}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setErrorFlag] = useState(false);
 
-  const baseUrl = 'http://10.167.1.138:8080';
   useEffect(() => {
     const abortController = new AbortController();
-    const url = `${baseUrl}/chat/11`;
+    const url = `${Constants.expoConfig.extra.api.host}/chat/11`;
 
     const fetchChat = async () => {
       try {
@@ -83,7 +89,9 @@ const Chat = ({route, navigation}) => {
             width={'80%'}
             key={`chat-${chat?.id}`}>
             {!chat.u && (
-              <Image width={40} height={40} source={{uri: user?.avatar}} />
+              <TouchableWithoutFeedback onPress={() => navigation.navigate('ChatProfile',{user})}>
+                <Image width={40} height={40} source={{uri: user?.avatar}} />
+              </TouchableWithoutFeedback>
             )}
             <Block card>
               <Text align={'left'}>{chat.text}</Text>

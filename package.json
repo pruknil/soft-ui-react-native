@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "REACT_NATIVE_PACKAGER_HOSTNAME=$(ifconfig en0 | grep 'inet ' | awk '{print $2}') expo start",
+    "start": "REACT_NATIVE_PACKAGER_HOSTNAME=$(ifconfig en0 | grep 'inet ' | awk '{print $2}') APP_ENV=dev expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
@@ -51,6 +51,7 @@
     "@types/i18n-js": "3.8.1",
     "@types/react": "~18.0.27",
     "@types/react-native": "0.67.6",
+    "dotenv": "^16.3.1",
     "eslint": "7.28.0",
     "jest-expo": "48.0.2",
     "typescript": "^4.9.4"

@@ -1,6 +1,6 @@
 import React, {useEffect, useLayoutEffect, useState} from 'react';
 import {RefreshControl} from 'react-native';
-
+import Constants from 'expo-constants';
 import {useNavigation} from '@react-navigation/core';
 import {useHeaderHeight} from '@react-navigation/stack';
 
@@ -49,11 +49,9 @@ const ChatMain = () => {
       ),
     });
   }, [assets.header, navigation, sizes.width, headerHeight]);
-  const baseUrl = 'http://10.167.1.138:8080';
   useEffect(() => {
     const abortController = new AbortController();
-    const url = `${baseUrl}/chat`;
-
+    const url = `${Constants.expoConfig.extra.api.host}/chat`;
     const fetchUsers = async () => {
       try {
         setIsLoading(true);
