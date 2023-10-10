@@ -5,7 +5,7 @@ module.exports = ({config}) => {
   //config.extra.auth.appleAuthSecret = process.env.APPLE_AUTH_SECRET;
   switch (process.env.APP_ENV) {
     case 'dev':
-      config.extra.api.host = 'http://192.168.5.114:8080';
+      config.extra.api.host = `http://${process.env.REACT_NATIVE_PACKAGER_HOSTNAME}:8080`;
       return config;
     default:
       throw new Error('Unexpected environment');

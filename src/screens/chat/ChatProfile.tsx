@@ -27,11 +27,24 @@ const ChatProfile = ({route, navigation}) => {
   }, [assets.header, navigation, sizes.width, headerHeight]);
 
   return (
-    <Block safe>
+    <Block>
       <ImageBackground
         style={{width: '100%', height: '100%'}}
-        source={{uri: user.avatar}}
-      />
+        source={{uri: user.avatar}}>
+        <Block style={{justifyContent: 'space-between'}}>
+          <Text style={{flex: 1, backgroundColor: 'red'}}>xxx</Text>
+          <Block flex={5}>
+            <Image
+              width={64}
+              height={64}
+              marginBottom={sizes.sm}
+              source={{uri: user.avatar}}
+            />
+          </Block>
+
+          <Text style={{flex: 1, backgroundColor: 'green'}}>xxx</Text>
+        </Block>
+      </ImageBackground>
     </Block>
   );
 };

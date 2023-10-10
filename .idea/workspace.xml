@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0fb4862-3fd7-4126-a55b-f3ee30ac3387" name="Default Changelist" comment="chat example">
-      <change afterPath="$PROJECT_DIR$/app.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/chat/ChatProfile.tsx" afterDir="false" />
+    <list default="true" id="e0fb4862-3fd7-4126-a55b-f3ee30ac3387" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigation/Screens.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/Screens.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/chat/Chat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/chat/Chat.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/chat/ChatMain.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/chat/ChatMain.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/chat/ChatProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/chat/ChatProfile.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +100,9 @@
         <script value="apk" />
       </scripts>
       <node-interpreter value="project" />
-      <envs />
+      <envs>
+        <env name="APP_ENV" value="dev" />
+      </envs>
       <method v="2" />
     </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -137,9 +133,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.apk" />
         <item itemvalue="npm.web" />
         <item itemvalue="npm.start" />
-        <item itemvalue="npm.apk" />
         <item itemvalue="npm.web" />
       </list>
     </recent_temporary>
@@ -179,6 +175,7 @@
     <MESSAGE value="keyboard avoid chat" />
     <MESSAGE value="fix ios keyboard avoid" />
     <MESSAGE value="chat example" />
-    <option name="LAST_COMMIT_MESSAGE" value="chat example" />
+    <MESSAGE value="add connfig" />
+    <option name="LAST_COMMIT_MESSAGE" value="add connfig" />
   </component>
 </project>
