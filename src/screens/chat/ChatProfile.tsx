@@ -4,12 +4,13 @@ import {useNavigation} from '@react-navigation/core';
 import {useHeaderHeight} from '@react-navigation/stack';
 
 import {useTheme, useData, useTranslation} from '../../hooks/';
-import {Block, Image} from '../../components/';
-import {ImageBackground, Text} from 'react-native';
+import {Block, Image, Text} from '../../components/';
+import {ImageBackground} from 'react-native';
 import {IUser} from '../../constants/types';
+import Button from '../../components/Button';
 
 const ChatProfile = ({route, navigation}) => {
-  const {colors, assets, sizes} = useTheme();
+  const {colors, assets, sizes, gradients} = useTheme();
   const headerHeight = useHeaderHeight();
   const {user} = route.params;
   useLayoutEffect(() => {
@@ -32,14 +33,23 @@ const ChatProfile = ({route, navigation}) => {
         style={{width: '100%', height: '100%'}}
         source={{uri: user.avatar}}>
         <Block style={{justifyContent: 'space-between'}}>
-          <Text style={{flex: 1, backgroundColor: 'red'}}>xxx</Text>
+          <Block flex={1}>
+            <Block flex={1} style={{justifyContent: 'flex-end'}}>
+              <Text white bold>
+                X
+              </Text>
+            </Block>
+          </Block>
+
           <Block flex={5}>
-            <Image
-              width={64}
-              height={64}
-              marginBottom={sizes.sm}
-              source={{uri: user.avatar}}
-            />
+            <Block style={{alignItems: 'center', justifyContent: 'center'}}>
+              <Image
+                width={64}
+                height={64}
+                marginBottom={sizes.sm}
+                source={{uri: user.avatar}}
+              />
+            </Block>
           </Block>
 
           <Text style={{flex: 1, backgroundColor: 'green'}}>xxx</Text>
