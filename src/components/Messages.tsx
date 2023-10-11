@@ -22,6 +22,7 @@ const Messages = ({text, createdAt, unRead, user}: IMessage) => {
           align={'center'}>
           <Image
             source={{uri: user.avatar}}
+            radius={sizes.xxl}
             style={{width: sizes.xxl, height: sizes.xxl, borderRadius: sizes.s}}
           />
           <Block marginLeft={sizes.s}>

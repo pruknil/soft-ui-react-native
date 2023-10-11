@@ -1,18 +1,19 @@
 import React, {useEffect, useLayoutEffect, useState} from 'react';
 import {useHeaderHeight} from '@react-navigation/stack';
 import {useData, useTheme, useTranslation} from '../../hooks/';
-import { Block, Image, Text, Input, Messages, Button } from "../../components/";
+import {Block, Image, Text, Input, Messages, Button} from '../../components/';
 import {
   KeyboardAvoidingView,
   Platform,
   TouchableHighlight,
-  TouchableOpacity, TouchableWithoutFeedback,
-  View
-} from "react-native";
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import axios from 'axios';
 import {IChat, IMessage} from '../../constants/types';
 import moment from 'moment';
-import Constants from "expo-constants";
+import Constants from 'expo-constants';
 
 const Chat = ({route, navigation}) => {
   const isAndroid = Platform.OS === 'android';
@@ -91,8 +92,14 @@ const Chat = ({route, navigation}) => {
             width={'80%'}
             key={`chat-${chat?.id}`}>
             {!chat.u && (
-              <TouchableWithoutFeedback onPress={() => navigation.navigate('ChatProfile',{user})}>
-                <Image radius={20} width={40} height={40} source={{uri: user?.avatar}} />
+              <TouchableWithoutFeedback
+                onPress={() => navigation.navigate('ChatProfile', {user})}>
+                <Image
+                  radius={20}
+                  width={40}
+                  height={40}
+                  source={{uri: user?.avatar}}
+                />
               </TouchableWithoutFeedback>
             )}
             <Block card>
@@ -115,7 +122,9 @@ const Chat = ({route, navigation}) => {
         keyboardVerticalOffset={headerHeight}
         behavior={Platform.OS == 'ios' ? 'padding' : 'height'}>
         <Block row color={colors.card} flex={0} padding={sizes.s}>
-          <Block flex={1}><Input placeholder={t('common.message')}/></Block>
+          <Block flex={1}>
+            <Input placeholder={t('common.message')} />
+          </Block>
           <Button flex={0} shadow={!isAndroid}>
             <Image
               source={assets.send}

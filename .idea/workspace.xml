@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0fb4862-3fd7-4126-a55b-f3ee30ac3387" name="Default Changelist" comment="add connfig">
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/send@1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/send@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/send@3x.png" afterDir="false" />
+    <list default="true" id="e0fb4862-3fd7-4126-a55b-f3ee30ac3387" name="Default Changelist" comment="add send icon">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/memo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/theme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/types/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/types/theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/chat/Chat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/chat/Chat.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/chat/ChatProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/chat/ChatProfile.tsx" afterDir="false" />
     </list>
@@ -144,6 +139,14 @@
     </recent_temporary>
   </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="add send icon">
+      <created>1697044266762</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697044266762</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,6 +180,7 @@
     <MESSAGE value="fix ios keyboard avoid" />
     <MESSAGE value="chat example" />
     <MESSAGE value="add connfig" />
-    <option name="LAST_COMMIT_MESSAGE" value="add connfig" />
+    <MESSAGE value="add send icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="add send icon" />
   </component>
 </project>
