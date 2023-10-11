@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-module.exports = ({config}) => {
+export default ({config}) => {
   // Environment variables, either from local .env or from EAS secrets if in EAS server
   //config.extra.auth.appleAuthSecret = process.env.APPLE_AUTH_SECRET;
   switch (process.env.APP_ENV) {

@@ -1,0 +1,26 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+
+[
+    {
+        "id": 1,
+        "text": "So in my opinion, if you only add ",
+        "createdAt": "2023-10-06T23:25:43.511Z",
+        "readed": false,
+        "u": true
+    },
+        {
+        "id": 2,
+        "text": "Hello",
+        "createdAt": "2023-10-06T18:25:43.511Z",
+        "readed": false,
+        "u": false
+    },
+        {
+        "id": 3,
+        "text": "In synthesis, I added the following dependency to",
+        "createdAt": "2023-10-06T18:25:43.511Z",
+        "readed": false,
+        "u": true
+    }
+]
