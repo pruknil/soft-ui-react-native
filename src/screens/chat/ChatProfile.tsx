@@ -44,9 +44,10 @@ const ChatProfile = ({route, navigation}) => {
           <Block flex={5}>
             <Block style={{alignItems: 'center', justifyContent: 'center'}}>
               <Image
-                width={64}
-                height={64}
+                width={sizes.xl * 2}
+                height={sizes.xl * 2}
                 marginBottom={sizes.sm}
+                radius={sizes.xl}
                 source={{uri: user.avatar}}
               />
             </Block>

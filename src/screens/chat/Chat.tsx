@@ -1,7 +1,7 @@
 import React, {useEffect, useLayoutEffect, useState} from 'react';
 import {useHeaderHeight} from '@react-navigation/stack';
 import {useData, useTheme, useTranslation} from '../../hooks/';
-import {Block, Image, Text, Input, Messages} from '../../components/';
+import { Block, Image, Text, Input, Messages, Button } from "../../components/";
 import {
   KeyboardAvoidingView,
   Platform,
@@ -15,6 +15,8 @@ import moment from 'moment';
 import Constants from "expo-constants";
 
 const Chat = ({route, navigation}) => {
+  const isAndroid = Platform.OS === 'android';
+  const {isDark} = useData();
   const {t} = useTranslation();
   const {colors, assets, sizes} = useTheme();
   const {user} = route.params;
@@ -90,7 +92,7 @@ const Chat = ({route, navigation}) => {
             key={`chat-${chat?.id}`}>
             {!chat.u && (
               <TouchableWithoutFeedback onPress={() => navigation.navigate('ChatProfile',{user})}>
-                <Image width={40} height={40} source={{uri: user?.avatar}} />
+                <Image radius={20} width={40} height={40} source={{uri: user?.avatar}} />
               </TouchableWithoutFeedback>
             )}
             <Block card>
@@ -112,8 +114,17 @@ const Chat = ({route, navigation}) => {
       <KeyboardAvoidingView
         keyboardVerticalOffset={headerHeight}
         behavior={Platform.OS == 'ios' ? 'padding' : 'height'}>
-        <Block color={colors.card} flex={0} padding={sizes.s}>
-          <Input placeholder={t('common.message')} />
+        <Block row color={colors.card} flex={0} padding={sizes.s}>
+          <Block flex={1}><Input placeholder={t('common.message')}/></Block>
+          <Button flex={0} shadow={!isAndroid}>
+            <Image
+              source={assets.send}
+              height={sizes.m}
+              width={sizes.m}
+              rounded={true}
+              color={isDark ? colors.icon : undefined}
+            />
+          </Button>
         </Block>
       </KeyboardAvoidingView>
     </Block>

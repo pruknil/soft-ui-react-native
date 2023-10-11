@@ -5,3 +5,4 @@ bundletool build-apks --bundle=my_app.aab --output=my_app.apks
 
 npx expo prebuild --platform android
 
+npm install -g mockserver
