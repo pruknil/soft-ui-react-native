@@ -5,8 +5,7 @@ import {Block, Image, Text, Input, Messages, Button} from '../../components/';
 import {
   KeyboardAvoidingView,
   Platform,
-  TouchableHighlight,
-  TouchableOpacity,
+  Keyboard,
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
@@ -26,6 +25,11 @@ const Chat = ({route, navigation}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setErrorFlag] = useState(false);
   const [textMsg, setTextMsg] = useState('');
+
+  const [errors, setErrors] = useState({
+    textMsg: '',
+  });
+
   useEffect(() => {
     const abortController = new AbortController();
     const url = `${Constants.expoConfig.extra.api.host}/chat/${user.id}`;
@@ -79,12 +83,23 @@ const Chat = ({route, navigation}) => {
     });
   }, [assets.header, navigation, sizes.width, headerHeight]);
 
-  function sendMsg(textMsg: string) {
-    setMessages((messages) => [
-      ...messages,
-      {text: textMsg, u: true, createdAt: new Date()},
-    ]);
-    setTextMsg('');
+  function sendMsg() {
+    if (validateForm(textMsg)) {
+      setMessages((messages) => [
+        ...messages,
+        {text: textMsg, u: true, createdAt: new Date()},
+      ]);
+      setTextMsg('');
+    }
+  }
+
+  function validateForm(textMsg: string) {
+    setTextMsg(textMsg);
+    errors.textMsg = textMsg.length < 1 ? 'Input message!' : '';
+    setErrors(errors);
+    let valid = true;
+    Object.values(errors).forEach((val) => val.length > 0 && (valid = false));
+    return valid;
   }
 
   return (
@@ -125,28 +140,36 @@ const Chat = ({route, navigation}) => {
             </Text>
           </View>
         ))}
+        {/*{Object.values(errors).map((error, index) => (*/}
+        {/*  <Text key={index} danger>*/}
+        {/*    {error}*/}
+        {/*  </Text>*/}
+        {/*))}*/}
       </Block>
       <KeyboardAvoidingView
         keyboardVerticalOffset={headerHeight}
         behavior={Platform.OS == 'ios' ? 'padding' : 'height'}>
-        <Block row color={colors.card} flex={0} padding={sizes.s}>
-          <Block flex={1}>
-            <Input
-              placeholder={t('common.message')}
-              value={textMsg}
-              onChangeText={(textMsg) => setTextMsg(textMsg)}
-            />
+        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+          <Block row color={colors.card} flex={0} padding={sizes.s}>
+            <Block flex={1}>
+              <Input
+                placeholder={t('common.message')}
+                value={textMsg}
+                onChangeText={(textMsg) => validateForm(textMsg)}
+                danger={errors.textMsg.length > 0}
+              />
+            </Block>
+            <Button flex={0} shadow={!isAndroid} onPress={() => sendMsg()}>
+              <Image
+                source={assets.send}
+                height={sizes.m}
+                width={sizes.m}
+                rounded={true}
+                color={isDark ? colors.icon : undefined}
+              />
+            </Button>
           </Block>
-          <Button flex={0} shadow={!isAndroid} onPress={() => sendMsg(textMsg)}>
-            <Image
-              source={assets.send}
-              height={sizes.m}
-              width={sizes.m}
-              rounded={true}
-              color={isDark ? colors.icon : undefined}
-            />
-          </Button>
-        </Block>
+        </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
     </Block>
   );

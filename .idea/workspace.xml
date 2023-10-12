@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0fb4862-3fd7-4126-a55b-f3ee30ac3387" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/chat/Chat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/chat/Chat.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
@@ -95,7 +96,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.mockserver">
     <configuration name="apk" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -146,8 +147,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
         <item itemvalue="npm.mockserver" />
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.apk" />
         <item itemvalue="npm.web" />
         <item itemvalue="npm.start" />
@@ -203,6 +204,7 @@
     <MESSAGE value="add connfig" />
     <MESSAGE value="add send icon" />
     <MESSAGE value="fix close button style" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix close button style" />
+    <MESSAGE value="chat input" />
+    <option name="LAST_COMMIT_MESSAGE" value="chat input" />
   </component>
 </project>
