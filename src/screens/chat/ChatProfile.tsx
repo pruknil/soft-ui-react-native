@@ -5,7 +5,7 @@ import {useHeaderHeight} from '@react-navigation/stack';
 
 import {useTheme, useData, useTranslation} from '../../hooks/';
 import {Block, Image, Text} from '../../components/';
-import {ImageBackground} from 'react-native';
+import {ImageBackground, StyleSheet} from 'react-native';
 import {IUser} from '../../constants/types';
 import Button from '../../components/Button';
 
@@ -43,11 +43,7 @@ const ChatProfile = ({route, navigation}) => {
                   size={sizes.m}
                   white
                   transform="uppercase"
-                  style={{
-                    textShadowColor: 'rgba(0, 0, 0, 0.75)',
-                    textShadowOffset: {width: 1, height: 1},
-                    textShadowRadius: 5,
-                  }}>
+                  style={styles.shadow}>
                   ✖
                 </Text>
               </Button>
@@ -63,6 +59,15 @@ const ChatProfile = ({route, navigation}) => {
                 radius={sizes.xl}
                 source={{uri: user.avatar}}
               />
+              <Text
+                paddingVertical={sizes.padding}
+                flex={0}
+                white
+                size={sizes.m}
+                bold
+                style={styles.shadow}>
+                {user.name}
+              </Text>
             </Block>
           </Block>
 
@@ -72,4 +77,12 @@ const ChatProfile = ({route, navigation}) => {
     </Block>
   );
 };
+
+const styles = StyleSheet.create({
+  shadow: {
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: {width: 1, height: 1},
+    textShadowRadius: 5,
+  },
+});
 export default ChatProfile;
