@@ -28,7 +28,7 @@ const Chat = ({route, navigation}) => {
 
   useEffect(() => {
     const abortController = new AbortController();
-    const url = `${Constants.expoConfig.extra.api.host}/chat/11`;
+    const url = `${Constants.expoConfig.extra.api.host}/chat/${user.id}`;
 
     const fetchChat = async () => {
       try {

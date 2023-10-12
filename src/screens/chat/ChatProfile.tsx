@@ -35,16 +35,21 @@ const ChatProfile = ({route, navigation}) => {
         <Block style={{justifyContent: 'space-between'}}>
           <Block flex={1}>
             <Block flex={1} style={{justifyContent: 'flex-end'}}>
-              <Button flex={0} width={sizes.md} onPress={()=>navigation.goBack()}>
-                <Text size={sizes.sm} white transform="uppercase">
-                  X
+              <Button
+                flex={0}
+                width={sizes.md}
+                onPress={() => navigation.goBack()}>
+                <Text
+                  size={sizes.m}
+                  white
+                  transform="uppercase"
+                  style={{
+                    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+                    textShadowOffset: {width: 1, height: 1},
+                    textShadowRadius: 5,
+                  }}>
+                  ✖
                 </Text>
-                {/*<Image*/}
-                {/*  source={assets.close}*/}
-                {/*  height={sizes.m}*/}
-                {/*  width={sizes.m}*/}
-                {/*  rounded={true}*/}
-                {/*/>*/}
               </Button>
             </Block>
           </Block>

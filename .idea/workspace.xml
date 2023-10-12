@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0fb4862-3fd7-4126-a55b-f3ee30ac3387" name="Default Changelist" comment="add send icon">
+      <change afterPath="$PROJECT_DIR$/test/mocks/chat/22/GET.mock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messages.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/chat/Chat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/chat/Chat.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/chat/ChatProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/chat/ChatProfile.tsx" afterDir="false" />
     </list>
@@ -23,10 +23,10 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/eas.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/navigation/Menu.tsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/screens/MyCamera.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/eas.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/screens/Settings.tsx" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IgnoredFileRootStore">
@@ -51,12 +51,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "/Users/pruknil/WebstormProjects/soft-ui-react-native/src/assets/icons",
-    "ts.external.directory.path": "/Users/pruknil/WebstormProjects/soft-ui-react-native/node_modules/typescript/lib"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/mocks/chat/22" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="origin" branch="feature/camera" />
@@ -66,20 +67,32 @@
     <option name="SHOW_DIALOG" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/assets/icons" />
-      <recent name="$PROJECT_DIR$/test/mocks/chat/__" />
-      <recent name="$PROJECT_DIR$/test/mocks/chat" />
-      <recent name="$PROJECT_DIR$/src/screens/chat" />
-      <recent name="$PROJECT_DIR$/src/components" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/screens/chat" />
       <recent name="$PROJECT_DIR$/src/screens" />
       <recent name="$PROJECT_DIR$/src/assets/icons" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test/mocks/chat/22" />
+      <recent name="$PROJECT_DIR$/src/assets/icons" />
+      <recent name="$PROJECT_DIR$/test/mocks/chat/__" />
+      <recent name="$PROJECT_DIR$/test/mocks/chat" />
+      <recent name="$PROJECT_DIR$/src/screens/chat" />
+    </key>
   </component>
-  <component name="RunManager" selected="npm.mockserver">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.start">
     <configuration name="apk" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -130,8 +143,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.mockserver" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.mockserver" />
         <item itemvalue="npm.apk" />
         <item itemvalue="npm.web" />
         <item itemvalue="npm.start" />
@@ -154,7 +167,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
