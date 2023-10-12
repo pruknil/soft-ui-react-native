@@ -22,7 +22,7 @@ const Chat = ({route, navigation}) => {
   const {colors, assets, sizes} = useTheme();
   const {user} = route.params;
   const headerHeight = useHeaderHeight();
-  const [messages, setMessages] = useState(null);
+  const [messages, setMessages] = useState<IChat[] | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setErrorFlag] = useState(false);
   const [textMsg, setTextMsg] = useState('');
@@ -80,7 +80,11 @@ const Chat = ({route, navigation}) => {
   }, [assets.header, navigation, sizes.width, headerHeight]);
 
   function sendMsg(textMsg: string) {
-    alert(textMsg);
+    setMessages((messages) => [
+      ...messages,
+      {text: textMsg, u: true, createdAt: new Date()},
+    ]);
+    setTextMsg('');
   }
 
   return (
