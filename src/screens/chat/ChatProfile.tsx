@@ -1,11 +1,11 @@
 import React, {useEffect, useLayoutEffect, useState} from 'react';
-
+import {Ionicons, MaterialIcons} from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/core';
 import {useHeaderHeight} from '@react-navigation/stack';
 
 import {useTheme, useData, useTranslation} from '../../hooks/';
 import {Block, Image, Text} from '../../components/';
-import {ImageBackground, StyleSheet} from 'react-native';
+import {ImageBackground, StyleSheet, TouchableOpacity} from 'react-native';
 import {IUser} from '../../constants/types';
 import Button from '../../components/Button';
 
@@ -38,6 +38,7 @@ const ChatProfile = ({route, navigation}) => {
               <Button
                 flex={0}
                 width={sizes.md}
+                height={sizes.md}
                 onPress={() => navigation.goBack()}>
                 <Text
                   size={sizes.m}
@@ -58,6 +59,7 @@ const ChatProfile = ({route, navigation}) => {
                 marginBottom={sizes.sm}
                 radius={sizes.xl}
                 source={{uri: user.avatar}}
+                shadow
               />
               <Text
                 paddingVertical={sizes.padding}
@@ -68,10 +70,40 @@ const ChatProfile = ({route, navigation}) => {
                 style={styles.shadow}>
                 {user.name}
               </Text>
+              <Block paddingVertical={sizes.padding} flex={0} row>
+                <Block flex={0} paddingHorizontal={sizes.m}>
+                  <TouchableOpacity
+                    style={{alignItems: 'center', justifyContent: 'center'}}>
+                    <Ionicons
+                      name="call"
+                      size={sizes.md}
+                      color={colors.white}
+                      style={styles.shadow}
+                    />
+                    <Text white style={styles.shadow}>
+                      Voice call
+                    </Text>
+                  </TouchableOpacity>
+                </Block>
+                <Block flex={0} paddingHorizontal={sizes.m}>
+                  <TouchableOpacity
+                    style={{alignItems: 'center', justifyContent: 'center'}}>
+                    <MaterialIcons
+                      name="video-call"
+                      size={sizes.md}
+                      color={colors.white}
+                      style={styles.shadow}
+                    />
+                    <Text white style={styles.shadow}>
+                      Video call
+                    </Text>
+                  </TouchableOpacity>
+                </Block>
+              </Block>
             </Block>
           </Block>
 
-          <Text style={{flex: 1, backgroundColor: 'green'}}>xxx</Text>
+          {/*<Text style={{flex: 1, backgroundColor: 'green'}}>xxx</Text>*/}
         </Block>
       </ImageBackground>
     </Block>

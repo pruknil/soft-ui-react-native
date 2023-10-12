@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0fb4862-3fd7-4126-a55b-f3ee30ac3387" name="Default Changelist" comment="">
+    <list default="true" id="e0fb4862-3fd7-4126-a55b-f3ee30ac3387" name="Default Changelist" comment="chat profile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/chat/Chat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/chat/Chat.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/chat/ChatProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/chat/ChatProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/mocks/chat/GET.mock" beforeDir="false" afterPath="$PROJECT_DIR$/test/mocks/chat/GET.mock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +98,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.mockserver">
+  <component name="RunManager" selected="npm.start">
     <configuration name="apk" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -146,8 +149,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.mockserver" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.mockserver" />
         <item itemvalue="npm.apk" />
         <item itemvalue="npm.web" />
         <item itemvalue="npm.start" />
@@ -205,6 +208,7 @@
     <MESSAGE value="fix close button style" />
     <MESSAGE value="chat input" />
     <MESSAGE value="validate input" />
-    <option name="LAST_COMMIT_MESSAGE" value="validate input" />
+    <MESSAGE value="chat profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="chat profile" />
   </component>
 </project>

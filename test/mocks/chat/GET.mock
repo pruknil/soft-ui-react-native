@@ -10,6 +10,7 @@ Content-Type: application/json; charset=utf-8
         "user": {
         	"id":11,
         	"name":"Sabir Khan",
+        	"friend": true,
         	"avatar":"https://i.stack.imgur.com/vdJq0.jpg?s=64&g=1"
         	}
     },
@@ -21,6 +22,7 @@ Content-Type: application/json; charset=utf-8
         "user": {
         	"id":22,
         	"name":"Mickael",
+        	"friend": true,
         	"avatar":"https://i.stack.imgur.com/ZE379.png?s=64&g=1"
         	}
     },
@@ -32,6 +34,7 @@ Content-Type: application/json; charset=utf-8
         "user": {
         	"id":33,
         	"name":"sonoerin",
+        	"friend": true,
         	"avatar":"https://i.stack.imgur.com/k9GiH.jpg?s=64&g=1"
         	}
     }

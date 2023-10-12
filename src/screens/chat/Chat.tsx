@@ -157,6 +157,7 @@ const Chat = ({route, navigation}) => {
                 value={textMsg}
                 onChangeText={(textMsg) => validateForm(textMsg)}
                 danger={errors.textMsg.length > 0}
+                focusable={true}
               />
             </Block>
             <Button flex={0} shadow={!isAndroid} onPress={() => sendMsg()}>

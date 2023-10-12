@@ -10,6 +10,7 @@ export interface IUser {
   name?: string;
   department?: string;
   avatar?: string;
+  friend?: boolean;
   stats?: {posts?: number; followers?: number; following?: number};
   social?: {twitter?: string; dribbble?: string};
   about?: string;
