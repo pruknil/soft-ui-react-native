@@ -25,7 +25,7 @@ const Chat = ({route, navigation}) => {
   const [messages, setMessages] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setErrorFlag] = useState(false);
-
+  const [textMsg, setTextMsg] = useState('');
   useEffect(() => {
     const abortController = new AbortController();
     const url = `${Constants.expoConfig.extra.api.host}/chat/${user.id}`;
@@ -44,15 +44,15 @@ const Chat = ({route, navigation}) => {
           console.debug(response.data);
           return;
         } else {
-          throw new Error('Failed to fetch users');
+          throw new Error('Failed to fetch chat');
         }
       } catch (error) {
         if (abortController.signal.aborted) {
           console.log('Data fetching cancelled');
-        } else {
-          setErrorFlag(true);
-          setIsLoading(false);
-        }
+        } //else {
+        setErrorFlag(true);
+        setIsLoading(false);
+        // }
       }
     };
 
@@ -79,6 +79,10 @@ const Chat = ({route, navigation}) => {
     });
   }, [assets.header, navigation, sizes.width, headerHeight]);
 
+  function sendMsg(textMsg: string) {
+    alert(textMsg);
+  }
+
   return (
     <Block safe>
       <Block scroll>
@@ -87,7 +91,7 @@ const Chat = ({route, navigation}) => {
             style={{
               flexDirection: chat.u ? 'row-reverse' : 'row',
               alignSelf: chat.u ? 'flex-end' : 'flex-start',
-              padding: 2,
+              padding: 3,
             }}
             width={'80%'}
             key={`chat-${chat?.id}`}>
@@ -123,9 +127,13 @@ const Chat = ({route, navigation}) => {
         behavior={Platform.OS == 'ios' ? 'padding' : 'height'}>
         <Block row color={colors.card} flex={0} padding={sizes.s}>
           <Block flex={1}>
-            <Input placeholder={t('common.message')} />
+            <Input
+              placeholder={t('common.message')}
+              value={textMsg}
+              onChangeText={(textMsg) => setTextMsg(textMsg)}
+            />
           </Block>
-          <Button flex={0} shadow={!isAndroid}>
+          <Button flex={0} shadow={!isAndroid} onPress={() => sendMsg(textMsg)}>
             <Image
               source={assets.send}
               height={sizes.m}
